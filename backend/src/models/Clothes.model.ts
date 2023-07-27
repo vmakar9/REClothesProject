@@ -43,7 +43,7 @@ const clothesSchema = new Schema(
         photos:{
             type:Array
         },
-        user:{
+        creator:{
             type:Types.ObjectId,
             required: true,
             ref:User,

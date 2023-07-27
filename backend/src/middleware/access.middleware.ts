@@ -13,7 +13,7 @@ class AccessMiddleware{
             const {_id,role} = req.res.locals.jwtPayload as ITokenPayload;
             const clothes = await Clothes.findById(clothesId);
 
-            if(clothes.user._id !=  _id && role !=  'admin'){
+            if(clothes.creator._id !=  _id && role !=  'admin'){
                 throw new ApiError("Access denied",401);
             }
             res.locals.clothes = clothes;

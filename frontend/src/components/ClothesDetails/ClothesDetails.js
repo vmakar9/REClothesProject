@@ -21,18 +21,26 @@ export default function ClothesDetails(){
 
     const {state} = location;
 
-    const {title, description,size,price,season,people,type,photos,materials,availability} = state;
+    const {title, description,size,price,season,people,type,photos,materials,availability,creator} = state;
 
-    const clothesCreator = state?.state?.filter(clothCreator =>  clothCreator._id ===   user._id )
+    const clothesCreator = user?.filter(clotheCreator => creator.includes(clotheCreator._id));
 
-    console.log(clothesCreator)
+
 
     const allPhotos = photos.map((photo,index)=>  (
         <img key ={index} src={`${photoURL}/${photo}`} alt={`Photo ${index +1}`}/>
     ));
 
 
-    return(<div className={css.container}>
+    return(
+        <div className={css.container}>
+        <div className={css.creator}>
+            {clothesCreator?.map(clotheCreator=>  (<div key={clotheCreator._id}>
+                <img alt={"User avatar"} src={`${photoURL}/${clotheCreator.avatar}`}/>
+                <h3>{clotheCreator.name}</h3> <h3>{clotheCreator.surname}</h3>
+            </div>))}
+
+        </div>
         <div className={css.product}>
             <h3 className={css.title}>{title}</h3>
             <p className={css.size}>{`${size}`}</p>
@@ -44,9 +52,6 @@ export default function ClothesDetails(){
             <div className={css.photos}>{allPhotos}</div>
             <p className={css.description}>{description}</p>
             <h3 className={css.price}>{price}</h3>
-        </div>
-        <div>
-            {JSON.stringify(clothesCreator)}
         </div>
     </div>)
 }

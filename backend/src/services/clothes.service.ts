@@ -7,9 +7,9 @@ import {s3Service} from "./s3.service";
 import {IPaginationResponse, IQuery} from "../types/pagination.types";
 
 class ClothesService{
-    public async create(data:IClothes,userId:string){
+    public async create(data:IClothes,creatorId:string){
         try {
-            await Clothes.create({...data,user: new Types.ObjectId(userId)});
+            await Clothes.create({...data,creator: new Types.ObjectId(creatorId)});
         }catch (e) {
             throw new ApiError(e.message,e.status)
         }
@@ -53,7 +53,7 @@ class ClothesService{
 
     public async getClothesById(clothesId:string):Promise<IClothes>{
         try {
-            return  await Clothes.findById(clothesId).populate({path:'user',select:['name','surname']});
+            return  await Clothes.findById(clothesId);
         }
         catch (e) {
             throw new ApiError(e.message,e.status)

@@ -17,6 +17,6 @@ export interface IClothes{
     people:string;
     type:string;
     photos:string[];
-    user:IUser | Types.ObjectId;
+    creator:IUser | Types.ObjectId;
     comments:IComments | Types.ObjectId
 }
