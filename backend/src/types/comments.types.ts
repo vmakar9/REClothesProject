@@ -8,6 +8,6 @@ export interface IComments{
     title:string;
     description:string;
     photos:string[];
-    user:IUser | Types.ObjectId;
-    clothes:IClothes | Types.ObjectId;
+    commentator:IUser | Types.ObjectId;
+    commented_clothes:IClothes | Types.ObjectId;
 }

@@ -81,6 +81,15 @@ class CommentsController{
             next(e)
         }
     }
+
+    public async getComments(req:Request,res:Response,next:NextFunction):Promise<Response<IComments[]>>{
+        try {
+            const comments = await commentsService.getAllComments();
+            return res.status(200).json(comments);
+        }catch (e) {
+            next(e)
+        }
+    }
 }
 
 export const commentsController = new CommentsController()

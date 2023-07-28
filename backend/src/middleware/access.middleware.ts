@@ -78,7 +78,7 @@ class AccessMiddleware{
 
             const comment = await Comments.findById(commentsId);
 
-            if(comment.user !=  _id && role !=  'admin' ){
+            if(comment.commentator !=  _id && role !=  'admin' ){
                 throw new ApiError("Access denied",401)
             }
             res.locals.comment = comment;

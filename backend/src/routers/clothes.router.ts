@@ -56,6 +56,9 @@ router.post("/:clothesId/comments",
     clothesMiddleware.getIdOrThrow,
     commentsController.create)
 
+router.get("/comments/get",
+    commentsController.getComments)
+
 router.put("/comments/:commentsId",
     authMiddleware.checkAccessToken,
     accessMiddleware.getUserStatus,

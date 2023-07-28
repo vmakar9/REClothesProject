@@ -13,12 +13,12 @@ const commentsSchema = new Schema(
         photos:{
             type:Array
         },
-        user: {
+        commentator: {
             type: Types.ObjectId,
             required: true,
             ref: User,
         },
-        clothes:{
+        commented_clothes:{
             type:Types.ObjectId,
             ref:Clothes
         }

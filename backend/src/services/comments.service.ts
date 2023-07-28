@@ -4,13 +4,14 @@ import {Types} from "mongoose";
 import {ApiError} from "../error/api.error";
 import {UploadedFile} from "express-fileupload";
 import {s3Service} from "./s3.service";
+import {IUser} from "../types/user.types";
 
 
 
 class CommentsService{
-    public async create(data:IComments,userId:string,clothesId:string){
+    public async create(data:IComments,commentatorId:string,commented_clothesId:string){
         try {
-            await Comments.create({...data,user:new Types.ObjectId(userId),clothes:clothesId})
+            await Comments.create({...data,commentator:new Types.ObjectId(commentatorId),commented_clothes:commented_clothesId})
         }catch (e) {
             throw new ApiError(e.message,e.status);
         }
@@ -73,6 +74,14 @@ class CommentsService{
         }
     }
 
+
+    public async getAllComments():Promise<IUser[]>{
+        try {
+            return Comments.find();
+        }catch (e) {
+            throw new ApiError(e.message,e.status)
+        }
+    }
 }
 
 export const commentsService = new CommentsService();
