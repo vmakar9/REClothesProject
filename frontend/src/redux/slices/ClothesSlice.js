@@ -3,14 +3,16 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
 const initialState={
     clothes:[],
-    clothesDetails:null
+    clothesDetails:null,
+    prev:null,
+    next:null
 }
 
 const getAll = createAsyncThunk(
     'clothesSlice/getAll',
-    async (_,{rejectWithValue})=>  {
+    async ({page},{rejectWithValue})=>  {
         try {
-            const {data} = await clothesService.getAll()
+            const {data} = await clothesService.getAll(page)
             return data
         }catch (e) {
             return rejectWithValue(e.response.data)
@@ -36,6 +38,8 @@ const clothesSlice= createSlice({
     extraReducers:{
         [getAll.fulfilled]:(state,action)=> {
             state.clothes = action.payload
+            state.prev = action.payload
+            state.next = action.payload
         },
         [getById.fulfilled]:(state,action)=> {
             state.clothesDetails = action.payload;

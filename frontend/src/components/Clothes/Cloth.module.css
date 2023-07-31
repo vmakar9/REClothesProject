@@ -37,3 +37,24 @@
     font-size: 18px;
     color: #007bff;
 }
+
+.custom_button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.custom_button:disabled {
+    background-color: #d3d3d3;
+    cursor: not-allowed;
+}
+
+.buttom_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
