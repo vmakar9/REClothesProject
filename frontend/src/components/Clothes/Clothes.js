@@ -3,7 +3,7 @@ import {useEffect} from "react";
 import css from "./Cloth.module.css"
 import Cloth from "./Cloth";
 import {clothesActions} from "../../redux/slices/ClothesSlice";
-import {useSearchParams} from "react-router-dom";
+import {Outlet, useSearchParams} from "react-router-dom";
 
 
 
@@ -28,5 +28,6 @@ export default function Clothes(){
             <button className={css.custom_button} disabled={!prev} onClick={()=>setQuery(query=>({page:+query.get('page')-1}))}>prev</button>
             <button className={css.custom_button} disabled={!next} onClick={()=>setQuery(query=>({page:+query.get('page')+1}))}>next</button>
         </div>
+        <Outlet/>
     </div>)
 }

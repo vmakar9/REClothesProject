@@ -9,6 +9,7 @@ import {commentsActions} from "../../redux/slices/CommentsSlice";
 import Comment from "./Comment";
 
 
+
 export default function ClothesDetails(){
 
     const location = useLocation()
