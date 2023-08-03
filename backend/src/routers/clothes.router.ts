@@ -10,6 +10,9 @@ import {commentsController} from "../controller/comments.controller";
 const router = Router();
 
 router.get("/",
+    clothesController.getWithThePagination)
+
+router.get("/getAll",
     clothesController.getAll)
 
 router.post("/",

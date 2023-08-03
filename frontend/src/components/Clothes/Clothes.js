@@ -16,7 +16,7 @@ export default function Clothes(){
     const [query,setQuery]= useSearchParams({page:'1'})
 
     useEffect(()=> {
-        dispatch(clothesActions.getAll({page:query.get('page')}))
+        dispatch(clothesActions.getWithThePagination({page:query.get('page')}))
     },[dispatch,query])
 
 

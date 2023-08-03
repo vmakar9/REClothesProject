@@ -12,6 +12,15 @@ class ClothesController{
 
     public async getAll(req:Request,res:Response,next:NextFunction):Promise<Response<IClothes[]>>{
         try {
+            const clothes = await clothesService.getAll();
+            return res.status(200).json(clothes)
+        }catch (e) {
+            next(e)
+        }
+    }
+
+    public async getWithThePagination(req:Request,res:Response,next:NextFunction):Promise<Response<IClothes[]>>{
+        try {
             const clothes = await clothesService.getWithPagination(
                 req.query as IQuery
             )

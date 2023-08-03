@@ -1,4 +1,4 @@
-import css from "./ClothesDetails.module.css";
+import css from "./Comment.module.css";
 import {photoURL} from "../../urls/urls";
 
 export default function Comment({commentar}){

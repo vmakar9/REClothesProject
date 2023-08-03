@@ -1,12 +1,4 @@
-.usercontainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.user{
+.comment {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -14,13 +6,16 @@
     margin-top: 20px;
     text-align: center;
 }
-.avatar{
+.commentphotos{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.commentphotos img{
     width: 200px;
     height: auto;
     margin: 0 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.username .surname{
-    color: #555;
-    font-size: 14px
-}
-

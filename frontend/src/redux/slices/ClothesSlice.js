@@ -3,16 +3,16 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
 const initialState={
     clothes:[],
-    clothesDetails:null,
+    allClothes:[],
     prev:null,
     next:null
 }
 
-const getAll = createAsyncThunk(
-    'clothesSlice/getAll',
+const getWithThePagination = createAsyncThunk(
+    'clothesSlice/getWithThePagination',
     async ({page},{rejectWithValue})=>  {
         try {
-            const {data} = await clothesService.getAll(page)
+            const {data} = await clothesService.getWithThePagination(page)
             return data
         }catch (e) {
             return rejectWithValue(e.response.data)
@@ -20,11 +20,11 @@ const getAll = createAsyncThunk(
     }
 )
 
-const getById = createAsyncThunk(
-    'clothesSlice/getById',
-    async ({_id},{rejectWithValue})=> {
+const getAll = createAsyncThunk(
+    'clothesSlice/getAll',
+    async (_,{rejectWithValue})=> {
         try {
-            const {data} = await clothesService.getById(_id);
+            const {data} = await clothesService.getAll();
             return data
         }catch (e) {
             return rejectWithValue(e.response.data)
@@ -36,13 +36,13 @@ const clothesSlice= createSlice({
     name:"clothesSlice",
     initialState,
     extraReducers:{
-        [getAll.fulfilled]:(state,action)=> {
+        [getWithThePagination.fulfilled]:(state,action)=> {
             state.clothes = action.payload
             state.prev = action.payload
             state.next = action.payload
         },
-        [getById.fulfilled]:(state,action)=> {
-            state.clothesDetails = action.payload;
+        [getAll.fulfilled]:(state,action)=> {
+            state.allClothes = action.payload;
         }
     }
 })
@@ -50,7 +50,7 @@ const clothesSlice= createSlice({
 const {reducer:clothesReducer}=clothesSlice;
 
 const clothesActions={
-    getAll,getById
+    getAll,getWithThePagination
 }
 
 export {clothesActions,clothesReducer}

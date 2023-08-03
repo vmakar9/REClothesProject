@@ -15,6 +15,13 @@ class ClothesService{
         }
     }
 
+    public async getAll():Promise<IClothes[]>{
+        try {
+            return Clothes.find()
+        }catch(e) {
+            throw new ApiError(e.message,e.status)
+        }
+    }
 
 
     public async getWithPagination(query:IQuery):Promise<IPaginationResponse<IClothes>>{
