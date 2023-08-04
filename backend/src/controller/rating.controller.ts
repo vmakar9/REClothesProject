@@ -62,6 +62,15 @@ class RatingController {
             next(e)
         }
     }
+
+    public async getAll(req:Request,res:Response,next:NextFunction):Promise<Response<IRating[]>>{
+        try {
+            const rating = await ratingService.getAll()
+            return res.status(200).json(rating)
+        }catch (e) {
+            next(e)
+        }
+    }
 }
 
 export const ratingController = new RatingController();

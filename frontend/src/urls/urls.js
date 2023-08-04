@@ -5,7 +5,8 @@ const photoURL = 'https://clothesshopproject.s3.amazonaws.com';
 const urls={
     clothes:'clothes',
     users:'users',
-    comments:'clothes/comments'
+    comments:'clothes/comments',
+    rating:'users/rating'
 }
 
 export {baseURL,urls,photoURL}

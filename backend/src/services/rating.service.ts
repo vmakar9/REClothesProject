@@ -14,6 +14,14 @@ class RatingService {
         }
     }
 
+    public async getAll():Promise<IRating[]>{
+        try {
+            return Rating.find()
+        }catch (e) {
+            throw new ApiError(e.message,e.status)
+        }
+    }
+
 }
 
 export const ratingService = new RatingService();
