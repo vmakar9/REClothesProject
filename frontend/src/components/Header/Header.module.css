@@ -3,3 +3,9 @@
     height: 100px;
     background: silver;
 }
+.header_theme{
+    height: 50px;
+    width: 100px;
+    position: absolute;
+    right: 10px;
+}

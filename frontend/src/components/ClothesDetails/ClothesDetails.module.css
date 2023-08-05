@@ -1,14 +1,14 @@
 .container {
+    border: 1px solid maroon;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f2f2f2;
     padding: 20px;
 }
 
 .product {
-    background-color: #fff;
+    border: 1px solid maroon;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -22,7 +22,7 @@
 }
 
 .size, .people, .season, .type, .materials, .availability, .description {
-    color: #555;
+    color: white;
     font-size: 14px;
 }
 
@@ -44,7 +44,7 @@
     color: #ff0000;
 }
 .creator {
-    background-color: #fff;
+    border: 1px solid maroon;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -52,6 +52,8 @@
     margin-top: 20px; /* Add some margin to separate it from the product section */
     display: flex;
     justify-content: start;
+    cursor: pointer;
+    transition: background-color 0.3s ease
 }
 
 .creator img {
