@@ -4,27 +4,28 @@ import Clothes from "./components/Clothes/Clothes";
 import Layout from "./components/Layout/Layout";
 import ClothesDetails from "./components/ClothesDetails/ClothesDetails";
 import UserDetails from "./components/UserDetails/UserDetails";
-import {useSelector} from "react-redux";
+import LoginPage from "./components/LoginPage/LoginPage";
 
 
 
 function App() {
 
-    const {background, color} = useSelector(state => state.theme)
+
 
     return (
         <div>
-            <div style={{color:color,background:background}}>
+            <div>
             <Routes>
-                <Route path="/" element={<Layout />}>
+                <Route path="/" element={<Layout/>}>
                     <Route index element={<Navigate to="/clothes" />} />
                     <Route path="/clothes" element={<Clothes />} />
                     <Route path="/clothes/:id" element={<ClothesDetails />} />
                     <Route path="/clothes/:id/userDetails" element={<UserDetails/>}/>
+                    <Route path="/login" element={<LoginPage/>}/>
                 </Route>
             </Routes>
-            </div>
         </div>
+</div>
     );
 }
 

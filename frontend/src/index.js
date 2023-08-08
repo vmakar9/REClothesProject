@@ -1,33 +1,24 @@
-import React, {createContext} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import {setupStore} from "./redux/store";
 import {Provider} from "react-redux";
 import {BrowserRouter} from "react-router-dom";
 import App from "./app";
+import {history} from "./services/api.service";
 
-const themes={
-    dark:{
-        background:'#18171B',
-        color:'white'
-    },
-    light:{
-        background:'#ffdead',
-        color:'black'
-    }
-}
 
-const ThemeContext = createContext(themes)
 const store = setupStore();
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
-    <ThemeContext.Provider value={themes}>
+
     <Provider store={store}>
-        <BrowserRouter>
+        <BrowserRouter history={history}>
             <App />
         </BrowserRouter>
     </Provider>
-   </ThemeContext.Provider>
+
 );
 
 // If you want to start measuring performance in your app, pass a function
