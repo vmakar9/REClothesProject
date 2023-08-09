@@ -2,10 +2,10 @@
     display: inline-flex;
     justify-content: center;
     padding: 20px;
-    border: 1px solid maroon;
 }
 
 .product {
+    background-color:white;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -19,7 +19,7 @@
 }
 
 .size, .people, .season, .type, .materials, .availability, .description {
-    color: white;
+    color: black;
     font-size: 14px;
 }
 
@@ -35,5 +35,5 @@
 .price {
     font-size: 20px;
     margin-bottom: 0;
-    color: #ff0000;
+    color: maroon;
 }

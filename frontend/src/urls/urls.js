@@ -10,7 +10,8 @@ const urls={
     comments:'clothes/comments',
     rating:'users/rating',
     login:`${auth}/login`,
-    refresh:`${auth}/refresh`
+    refresh:`${auth}/refresh`,
+    register:`${auth}/register`
 }
 
 export {baseURL,urls,photoURL}

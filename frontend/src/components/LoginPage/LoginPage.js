@@ -2,6 +2,7 @@ import {useForm} from "react-hook-form";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {authService} from "../../services/auth.service";
+import css from "./Login.module.css"
 
 export default function LoginPage(){
     const {register,handleSubmit} = useForm();
@@ -20,8 +21,8 @@ export default function LoginPage(){
     };
 
     return(
-        <div>
-            <div>
+        <div className={css.login}>
+            <div className={css.login_container}>
                 <form onSubmit={handleSubmit(login)}>
                     <input type="text" placeholder={'email'} {...register('email')}/>
                     <input type="password" placeholder={'password'} {...register('password')}/>
