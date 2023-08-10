@@ -11,7 +11,8 @@ const urls={
     rating:'users/rating',
     login:`${auth}/login`,
     refresh:`${auth}/refresh`,
-    register:`${auth}/register`
+    register:`${auth}/register`,
+    activate:`${auth}/activate`
 }
 
 export {baseURL,urls,photoURL}

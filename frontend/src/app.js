@@ -5,6 +5,8 @@ import ClothesDetails from "./components/ClothesDetails/ClothesDetails";
 import UserDetails from "./components/UserDetails/UserDetails";
 import LoginPage from "./components/LoginPage/LoginPage";
 import RegisterPage from "./components/RegisterPage/RegisterPage";
+import ActivatePage from "./components/ActivatePage/ActivatePage";
+import ActivationPage from "./components/ActivatePage/ActivationPage";
 
 
 
@@ -24,6 +26,8 @@ function App() {
                     <Route path="/clothes/:id/userDetails" element={<UserDetails/>}/>
                     <Route path="/login" element={<LoginPage/>}/>
                     <Route path="/register" element={<RegisterPage/>}/>
+                    <Route path="/activateAcc" element={<ActivatePage/>}/>
+                    <Route path="/activateMess" element={<ActivationPage/>}/>
                 </Route>
             </Routes>
         </div>

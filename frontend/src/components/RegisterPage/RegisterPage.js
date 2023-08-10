@@ -12,7 +12,7 @@ export default function RegisterPage(){
     const registerUser = async (user)=> {
         try {
             await registerService.register(user)
-            navigate('/login')
+            navigate('/activate')
         }catch (e) {
            if(e.response.data ===   401){
                setError(e.response.data)
