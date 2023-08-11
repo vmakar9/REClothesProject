@@ -2,6 +2,7 @@ import {useForm} from "react-hook-form";
 import {useNavigate} from "react-router-dom";
 import {useState} from "react";
 import {activateService} from "../../services/activate.service";
+import css from "./Activate.module.css"
 
 export default function ActivatePage(){
     const {register,handleSubmit} = useForm()
@@ -19,9 +20,9 @@ export default function ActivatePage(){
         }
     }
 
-    return(<div>
-        <p>Please write your email that you used for register</p>
-        <div>
+    return(<div className={css.activate}>
+        <div className={css.acform}>
+            <p>Please write your email that you used for register</p>
             <form onSubmit={handleSubmit(activateUser)}>
                 <input type="text" placeholder={'email'} {...register('email')}/>
                 <button>Send Email</button>
