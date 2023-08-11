@@ -11,7 +11,7 @@ export default function ActivatePage(){
     const activateUser= async (email)=> {
         try {
             await activateService.activateAcc(email);
-            navigate('/activateAcc')
+            navigate('/activateMess')
         }catch (e) {
             if(e.response.data ===   401){
                 setError(e.response.data)
