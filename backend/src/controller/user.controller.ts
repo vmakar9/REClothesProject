@@ -4,6 +4,7 @@ import {userService} from "../services/user.service";
 import {IUser} from "../types/user.types";
 import {userMapper} from "../mapper/user.mapper";
 import {User} from "../models/User.model";
+import {ITokenPayload} from "../types/token.types";
 
 
 
@@ -73,6 +74,19 @@ class UserController{
             next(e);
         }
     }
+
+    public async getOwnInfo(req:Request,res:Response,next:NextFunction):Promise<Response<IUser>>{
+        try{
+            const {_id} = req.res.locals.jwtPayload as ITokenPayload;
+
+
+            const user = await User.find({_id:_id})
+
+            return res.status(200).json(user)
+        }catch (e) {
+            next(e)
+        }
+}
 
 
 }

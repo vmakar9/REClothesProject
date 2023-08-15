@@ -2,6 +2,7 @@ import {NextFunction, Request, Response} from "express";
 import {User} from "../models/User.model";
 import {ApiError} from "../error/api.error";
 import {IUser} from "../types/user.types";
+import {ITokenPayload} from "../types/token.types";
 
 class UserMiddleware{
     public getDynamicallyAndThrow(
@@ -69,6 +70,20 @@ class UserMiddleware{
             next();
         } catch (e) {
             next(e);
+        }
+    }
+
+    public async getByIdAccess(req:Request,res:Response,next:NextFunction):Promise<void>{
+        try {
+            const {_id} = req.res.locals.jwtPayload as ITokenPayload;
+            const user = await User.find({_id:_id})
+            if(!user){
+                throw new ApiError("Info is undefinded",404)
+            }
+            res.locals.user = user;
+            next()
+        }catch (e) {
+            next(e)
         }
     }
 }

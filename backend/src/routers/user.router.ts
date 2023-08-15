@@ -17,6 +17,11 @@ router.get("/:userId",
     userMiddleware.getByIdOrThrow,
     userController.getById)
 
+router.get("/get/ownInfo",
+    authMiddleware.checkAccessToken,
+    userMiddleware.getByIdAccess,
+    userController.getOwnInfo)
+
 router.put("/:userId/avatar",
     authMiddleware.checkAccessToken,
     userMiddleware.getByIdOrThrow,
