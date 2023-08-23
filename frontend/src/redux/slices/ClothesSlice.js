@@ -32,6 +32,18 @@ const getAll = createAsyncThunk(
     }
 )
 
+const create = createAsyncThunk(
+    'clothesSlice/create',
+    async ({data},thunkAPI)=> {
+        try {
+            await clothesService.create(data);
+            thunkAPI.dispatch(getWithThePagination({page:1}))
+        }catch (e) {
+            return thunkAPI.rejectWithValue(e.response.data)
+        }
+    }
+)
+
 const clothesSlice= createSlice({
     name:"clothesSlice",
     initialState,
@@ -50,7 +62,7 @@ const clothesSlice= createSlice({
 const {reducer:clothesReducer}=clothesSlice;
 
 const clothesActions={
-    getAll,getWithThePagination
+    getAll,getWithThePagination,create
 }
 
 export {clothesActions,clothesReducer}

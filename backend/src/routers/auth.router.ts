@@ -3,7 +3,7 @@ import {userMiddleware} from "../middleware/user.middleware";
 import {authMiddleware} from "../middleware/auth.middleware";
 import {EActionTokenType} from "../enum/action-token-type";
 import {authController} from "../controller/auth.controller";
-import cors from "cors";
+
 
 const router = Router();
 
@@ -40,11 +40,7 @@ router.put('/activate/:token',
     authMiddleware.checkActionToken(EActionTokenType.activate),
     authController.activate)
 
-router.use(cors({
-    origin: 'http://localhost:3000',
-    allowedHeaders: ['Authorization', 'Content-Type'], // Add 'Authorization' to the list
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-}));
+
 
 
 export const authRouter = router

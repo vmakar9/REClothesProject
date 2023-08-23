@@ -78,15 +78,12 @@ class UserController{
     public async getOwnInfo(req:Request,res:Response,next:NextFunction):Promise<Response<IUser>>{
         try{
             const {_id} = req.res.locals.jwtPayload as ITokenPayload;
-
-
             const user = await User.find({_id:_id})
-
             return res.status(200).json(user)
         }catch (e) {
             next(e)
         }
-}
+    }
 
 
 }

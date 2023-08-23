@@ -1,6 +1,7 @@
 import css from "./Header.module.css"
 import {Link} from "react-router-dom";
 
+
 export default function Header(){
 
     return(<div>
@@ -15,6 +16,7 @@ export default function Header(){
                     <Link className={css.link} to={'/activateAcc'}>Activate</Link>
                 </div>
             </div>
+            <Link to={'/create'}>Create</Link>
     </div>
 
     )

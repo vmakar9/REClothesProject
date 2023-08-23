@@ -7,6 +7,7 @@ import {fileMiddleware} from "../middleware/file.middleware";
 import {clothesController} from "../controller/clothes.controller";
 import {commentsController} from "../controller/comments.controller";
 
+
 const router = Router();
 
 router.get("/",

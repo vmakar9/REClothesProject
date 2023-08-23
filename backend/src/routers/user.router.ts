@@ -7,6 +7,7 @@ import {ratingMiddleware} from "../middleware/rating.middleware";
 import {userController} from "../controller/user.controller";
 import {ratingController} from "../controller/rating.controller";
 
+
 const router = Router();
 
 router.get("/",
@@ -75,6 +76,7 @@ router.delete("/rating/:ratingId",
     accessMiddleware.getRatingAccess,
     ratingMiddleware.getIdOrThrow,
     ratingController.delete)
+
 
 
 export const userRouter = router;

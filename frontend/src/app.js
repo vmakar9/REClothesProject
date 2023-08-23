@@ -8,14 +8,9 @@ import RegisterPage from "./components/RegisterPage/RegisterPage";
 import ActivatePage from "./components/ActivatePage/ActivatePage";
 import ActivationPage from "./components/ActivatePage/ActivationPage";
 import {Activate} from "./components/ActivatePage/Activate";
-
-
-
+import ClothesCreate from "./components/ClothesCreate/ClothesCreate";
 
 function App() {
-
-
-
     return (
         <div>
             <div>
@@ -30,6 +25,7 @@ function App() {
                     <Route path="/activateAcc" element={<ActivatePage/>}/>
                     <Route path="/activateMess" element={<ActivationPage/>}/>
                     <Route path="/activate" element={<Activate/>}/>
+                    <Route path="/create" element={<ClothesCreate/>}/>
                 </Route>
             </Routes>
         </div>

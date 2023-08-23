@@ -10,6 +10,7 @@ import http from "http";
 import {messagesRouter} from "./routers/messages.router";
 import {adminRouter} from "./routers/admin.router";
 import {favoriteRouter} from "./routers/favorites.router";
+import cors from "cors";
 
 
 
@@ -23,6 +24,13 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(fileUploader())
 app.set('io', io);
+
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+
 
 app.use("/auth", authRouter);
 app.use("/users",userRouter);
