@@ -15,8 +15,13 @@ export default function Header(){
                 <div className={css.link_block}>
                     <Link className={css.link} to={'/activateAcc'}>Activate</Link>
                 </div>
+                <div className={css.link_block}>
+                    <Link className={css.link} to={'/create'}>Create</Link>
+                </div>
+                <div className={css.link_block}>
+                    <Link className={css.link} to={'/'}>Clothes</Link>
+                </div>
             </div>
-            <Link to={'/create'}>Create</Link>
     </div>
 
     )
