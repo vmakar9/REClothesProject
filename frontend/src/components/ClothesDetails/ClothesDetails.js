@@ -7,6 +7,8 @@ import {photoURL} from "../../urls/urls";
 import CreatorClothes from "./CreatorClothes";
 import {commentsActions} from "../../redux/slices/CommentsSlice";
 import Comment from "./Comment";
+import Sizes from "../Clothes/Sizes";
+import Season from "./Season";
 
 
 
@@ -48,9 +50,9 @@ export default function ClothesDetails(){
        <div className={css.creator}>{clothesCreator?.map(clothCreator =>  <CreatorClothes key={clothCreator._id} clothCreator={clothCreator}/>)}</div>
         <div className={css.product}>
             <h3 className={css.title}>{title}</h3>
-            <p className={css.size}>{`${size}`}</p>
+            <div className={css.size}>{size.map((sizes,index)=>  (<Sizes key={index} name={sizes.name}/>))}</div>
             <p className={css.people}>{people}</p>
-            <p className={css.season}>{`${season}`}</p>
+            <p className={css.season}>{season.map((seasons,index)=>  (<Season key={index} name={seasons.name}/>))}</p>
             <p className={css.type}>{type}</p>
             <p className={css.materials}>{`${materials}`}</p>
             <p className={css.avilability}>{availability}</p>

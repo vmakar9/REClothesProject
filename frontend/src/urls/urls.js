@@ -10,7 +10,7 @@ const urls={
     clothes:'clothes',
     users:`${users}`,
     comments:'clothes/comments',
-    rating:'users/rating',
+    rating:`${users}/rating`,
     login:`${auth}/login`,
     refresh:`${auth}/refresh`,
     register:`${auth}/register`,
