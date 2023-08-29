@@ -5,8 +5,10 @@ import {Link} from "react-router-dom";
 export default function Header(){
 
     return(<div>
-            <Link to={'/cabinet'}>Cabinet</Link>
             <div className={css.link_container}>
+                <div className={css.link_block}>
+                    <Link className={css.link} to={'/cabinet'}>Cabinet</Link>
+                </div>
                 <div className={css.link_block}>
                     <Link className={css.link} to={'/login'}>Login</Link>
                 </div>
