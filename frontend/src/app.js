@@ -9,6 +9,7 @@ import ActivatePage from "./components/ActivatePage/ActivatePage";
 import ActivationPage from "./components/ActivatePage/ActivationPage";
 import {Activate} from "./components/ActivatePage/Activate";
 import ClothesCreate from "./components/ClothesCreate/ClothesCreate";
+import UserCabinet from "./components/UserCabinet/UserCabinet";
 
 function App() {
     return (
@@ -26,6 +27,7 @@ function App() {
                     <Route path="/activateMess" element={<ActivationPage/>}/>
                     <Route path="/activate" element={<Activate/>}/>
                     <Route path="/create" element={<ClothesCreate/>}/>
+                    <Route path="/cabinet" element={<UserCabinet/>}/>
                 </Route>
             </Routes>
         </div>

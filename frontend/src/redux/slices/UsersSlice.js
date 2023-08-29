@@ -2,7 +2,8 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {usersService} from "../../services/users.service";
 
 const initialState={
-    user:[]
+    user:[],
+    userInfo:null
 }
 
 const getUser = createAsyncThunk(
@@ -17,12 +18,27 @@ const getUser = createAsyncThunk(
     }
 )
 
+const getOwnInfo = createAsyncThunk(
+    'userSlice/getOwnInfo',
+    async ({_id},thunkAPI)=> {
+        try {
+            const {data} = await usersService.getOwnInfo(_id)
+            return data
+        }catch (e) {
+            return thunkAPI.rejectWithValue(e.response.data)
+        }
+    }
+)
+
 const userSlice = createSlice({
     name:'userSlice',
     initialState,
     extraReducers:{
         [getUser.fulfilled]:(state,action)=> {
             state.user = action.payload;
+        },
+        [getOwnInfo.fulfilled]:(state,action)=> {
+            state.userInfo = action.payload;
         }
     }
 })
@@ -30,7 +46,7 @@ const userSlice = createSlice({
 const {reducer:userReducer} = userSlice;
 
 const userActions ={
-    getUser
+    getUser,getOwnInfo
 }
 
 export {userReducer,userActions}
