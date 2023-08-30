@@ -58,7 +58,7 @@ router.get("/:targetId/rating",
 router.get("/rating/getAll",
     ratingController.getAll)
 
-router.get("/rating",
+router.get("/rating/getOwnRating",
     authMiddleware.checkAccessToken,
     accessMiddleware.getUserStatus,
     ratingController.getOwnRating)
