@@ -4,6 +4,7 @@ import {userActions} from "../../redux/slices/UsersSlice";
 import UserInfo from "./UserInfo";
 import {authService} from "../../services/auth.service";
 import UserRating from "./UserRating";
+import ExitCabinet from "./ExitCabinet";
 
 export default function UserCabinet(){
     const dispatch = useDispatch();
@@ -18,6 +19,7 @@ export default function UserCabinet(){
 
     return(<div>
         {userInfo?.map(userInfos =>  <UserInfo key={userInfos._id} userInfos={userInfos}/>)}
+        <ExitCabinet/>
         <UserRating/>
     </div>)
 
