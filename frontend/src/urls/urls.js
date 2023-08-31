@@ -6,6 +6,8 @@ const auth='auth'
 
 const users = 'users'
 
+const password = 'password'
+
 const urls={
     clothes:'clothes',
     users:`${users}`,
@@ -15,7 +17,8 @@ const urls={
     refresh:`${auth}/refresh`,
     register:`${auth}/register`,
     activate:`${auth}/activate`,
-    ownInfo:`${users}/get/ownInfo`
+    ownInfo:`${users}/get/ownInfo`,
+    changePassword:`${auth}/${password}/change`
 }
 
 export {baseURL,urls,photoURL}

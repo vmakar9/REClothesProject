@@ -10,6 +10,7 @@ import ActivationPage from "./components/ActivatePage/ActivationPage";
 import {Activate} from "./components/ActivatePage/Activate";
 import ClothesCreate from "./components/ClothesCreate/ClothesCreate";
 import UserCabinet from "./components/UserCabinet/UserCabinet";
+import ChangePassword from "./components/ChangePasswordPage/ChangePassword";
 
 function App() {
     return (
@@ -28,6 +29,7 @@ function App() {
                     <Route path="/activate" element={<Activate/>}/>
                     <Route path="/create" element={<ClothesCreate/>}/>
                     <Route path="/cabinet" element={<UserCabinet/>}/>
+                    <Route path="/changePassword" element={<ChangePassword/>}/>
                 </Route>
             </Routes>
         </div>

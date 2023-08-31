@@ -5,9 +5,15 @@ import UserInfo from "./UserInfo";
 import {authService} from "../../services/auth.service";
 import UserRating from "./UserRating";
 import ExitCabinet from "./ExitCabinet";
+import css from "./UserInfo.module.css"
+import {useNavigate} from "react-router-dom";
+
 
 export default function UserCabinet(){
+
     const dispatch = useDispatch();
+
+    const navigate = useNavigate();
 
     const _id = authService.getIdByToken(); // Припускаючи, що accessToken містить _id
 
@@ -19,6 +25,9 @@ export default function UserCabinet(){
 
     return(<div>
         {userInfo?.map(userInfos =>  <UserInfo key={userInfos._id} userInfos={userInfos}/>)}
+        <div>
+        <button onClick={() =>  navigate("/changePassword")} className={css.changePassword}>ChangePassword</button>
+        </div>
         <ExitCabinet/>
         <UserRating/>
     </div>)
