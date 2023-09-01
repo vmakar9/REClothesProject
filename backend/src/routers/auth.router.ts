@@ -22,6 +22,7 @@ router.post('/refresh',
 router.post('/password/change',
     authMiddleware.checkAccessToken,
     userMiddleware.getDynamicallyAndThrow("email"),
+    authMiddleware.checkOldPassword,
     authController.changePassword)
 
 router.post('/password/forgot',

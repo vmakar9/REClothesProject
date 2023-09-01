@@ -5,5 +5,7 @@ export const passwordService={
     changePassword:(_id,oldPassword,newPassword)=> apiService.post(urls.changePassword,{
         _id,
         oldPassword,
-        newPassword})
+        newPassword}),
+    forgotPassword:(email)=> apiService.post(urls.forgotPassword,email),
+    setNewPassword:(token,password)=> apiService.put(`${urls.forgotPassword}/${token}`,{password})
 }

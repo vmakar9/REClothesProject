@@ -28,6 +28,9 @@ export default function LoginPage(){
                     <input type="password" placeholder={'password'} {...register('password')}/>
                     <button>login</button>
                 </form>
+                <div className={css.forgot_button}>
+                    <button onClick={()=> navigate('/forgotPassword')}>Forgot Password</button>
+                </div>
             </div>
             {error?.detail &&
                 <div>

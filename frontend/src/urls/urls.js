@@ -18,7 +18,8 @@ const urls={
     register:`${auth}/register`,
     activate:`${auth}/activate`,
     ownInfo:`${users}/get/ownInfo`,
-    changePassword:`${auth}/${password}/change`
+    changePassword:`${auth}/${password}/change`,
+    forgotPassword:`${auth}/${password}/forgot`
 }
 
 export {baseURL,urls,photoURL}

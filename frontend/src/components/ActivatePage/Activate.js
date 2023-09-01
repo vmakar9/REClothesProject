@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {activateService} from "../../services/activate.service";
-import {useLocation, useParams} from "react-router-dom";
+import {useLocation} from "react-router-dom";
 
 
 const Activate =()=> {
