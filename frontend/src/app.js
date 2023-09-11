@@ -14,6 +14,7 @@ import ChangePassword from "./components/ChangePasswordPage/ChangePassword";
 import ForgotSendEmail from "./components/ForgotPassoword/ForgotSendEmail";
 import ForgotPasswordMessage from "./components/ForgotPassoword/ForgotPasswordMessage";
 import SetNewPassword from "./components/ForgotPassoword/SetNewPassword";
+import UpdateOwnInfo from "./components/UpdateOwnInfo/UpdateOwnInfo";
 
 function App() {
     return (
@@ -36,6 +37,7 @@ function App() {
                     <Route path="/forgotPassword" element={<ForgotSendEmail/>}/>
                     <Route path="/forgotPasswordMessage" element={<ForgotPasswordMessage/>}/>
                     <Route path="/forgot" element={<SetNewPassword/>}/>
+                    <Route path="/updateOwnInfo" element={<UpdateOwnInfo/>}/>
                 </Route>
             </Routes>
         </div>

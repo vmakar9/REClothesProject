@@ -38,11 +38,9 @@ router.delete("/:userId/avatar",
     accessMiddleware.getUserStatus,
     userController.deleteAvatar);
 
-router.patch("/:userId",
+router.patch("/updateOwnInfo",
     authMiddleware.checkAccessToken,
-    userMiddleware.getByIdOrThrow,
     accessMiddleware.getUserStatus,
-    accessMiddleware.getUserAccess,
     userController.update)
 
 router.post("/:userId/rating",

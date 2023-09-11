@@ -35,14 +35,19 @@ class UserController{
 
     public async update(req:Request,res:Response,next:NextFunction):Promise<Response<IUser>>{
         try {
+            const {_id} = req.res.locals.jwtPayload as ITokenPayload;
 
-            const {userId} = req.params;
+           const {name,email,surname} = req.body
 
             const updatedUser = await User.findByIdAndUpdate(
-                userId,
-                {...req.body},
+                {_id:_id},
+                {$set:{name,surname,email}},
                 {new:true}
             );
+
+            if (!updatedUser) {
+                return res.status(404).json({ message: 'Користувач не знайдений' });
+            }
 
             return res.status(201).json(updatedUser)
         }catch (e) {

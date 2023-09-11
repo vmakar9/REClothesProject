@@ -34,6 +34,9 @@ export default function UserCabinet(){
         <div>
             <button onClick={() =>  navigate("/create")} className={css.buttons}>Create</button>
         </div>
+        <div>
+            <button onClick={() =>  navigate("/updateOwnInfo")} className={css.buttons}>Update info</button>
+        </div>
         <ExitCabinet/>
         <UserRating/>
     </div>)

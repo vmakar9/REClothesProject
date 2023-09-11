@@ -19,7 +19,8 @@ const urls={
     activate:`${auth}/activate`,
     ownInfo:`${users}/get/ownInfo`,
     changePassword:`${auth}/${password}/change`,
-    forgotPassword:`${auth}/${password}/forgot`
+    forgotPassword:`${auth}/${password}/forgot`,
+    updateOwnInfo:`${users}/updateOwnInfo`
 }
 
 export {baseURL,urls,photoURL}
