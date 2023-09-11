@@ -3,10 +3,12 @@ import {useNavigate} from "react-router-dom";
 import {useForm} from "react-hook-form";
 import {usersService} from "../../services/users.service";
 import css from "./UpdateOwnInfo.module.css"
+import {useState} from "react";
 
 export default function UpdateOwnInfo(){
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
+    const [error,setError] = useState(null)
 
     const handleUpdateUser = async (data) => {
         try {
@@ -28,7 +30,9 @@ export default function UpdateOwnInfo(){
             await usersService.updateOwnInfo(_id, updateData.name, updateData.email, updateData.surname);
             navigate('/cabinet');
         } catch (e) {
-            console.error('Помилка при оновленні інформації користувача', e);
+            if(e.response.data ===   401){
+                setError(e.response.data)
+            }
         }
     }
 
@@ -42,6 +46,12 @@ export default function UpdateOwnInfo(){
                     <button>Change</button>
                 </form>
             </div>
+            {error?.detail &&
+                <div>
+                    {error.detail}
+                </div>
+            }
         </div>
+
     );
 }
