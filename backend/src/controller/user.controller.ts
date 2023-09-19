@@ -14,7 +14,9 @@ class UserController{
             const userEntity = res.locals.user as IUser;
             const avatar = req.files.avatar as UploadedFile;
             const user  = await userService.uploadAvatar(avatar,userEntity);
+            console.log(avatar)
             return res.status(201).json(user);
+
         }catch (e) {
             next(e);
         }

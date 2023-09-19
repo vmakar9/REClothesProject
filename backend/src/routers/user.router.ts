@@ -27,14 +27,12 @@ router.put("/:userId/avatar",
     authMiddleware.checkAccessToken,
     userMiddleware.getByIdOrThrow,
     accessMiddleware.getUserStatus,
-    accessMiddleware.getUserAccess,
     fileMiddleware.isAvatarValid,
     userController.uploadAvatar);
 
 router.delete("/:userId/avatar",
     authMiddleware.checkAccessToken,
     userMiddleware.getByIdOrThrow,
-    accessMiddleware.getUserAccess,
     accessMiddleware.getUserStatus,
     userController.deleteAvatar);
 

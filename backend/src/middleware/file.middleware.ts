@@ -7,7 +7,7 @@ class FileMiddleware{
     public isAvatarValid(req:Request,res:Response,next:NextFunction){
         try {
             if(!req.files){
-                throw new ApiError("No files to upload",409)
+                 throw new ApiError("No files to upload",400)
             }
             if(Array.isArray(req.files.avatar)){
                 throw new ApiError("You can upload only one photo",400)

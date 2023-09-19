@@ -5,7 +5,7 @@ import {usersService} from "../../services/users.service";
 const initialState={
     user:[],
     userInfo:null,
-    userForUpdate:null
+    avatar:null
 }
 
 const getUser = createAsyncThunk(
@@ -32,16 +32,27 @@ const getOwnInfo = createAsyncThunk(
     }
 )
 
-const updateOwnInfo = createAsyncThunk(
-    'userSlice/updateOwnInfo',
-    async ({_id,name,surname,email},thunkAPI)=> {
+const putAvatar = createAsyncThunk(
+    'userSlice/putAvatar',
+    async ({avatar,id},thunkAPI)=> {
         try {
-            const {data}  = await usersService.updateOwnInfo(_id,name,surname,email)
+            const {data} = await usersService.putAvatar(avatar,id)
             return data
         }catch (e) {
             return thunkAPI.rejectWithValue(e.response.data)
         }
+    }
+)
 
+const deleteAvatar = createAsyncThunk(
+    'userSlice/deleteAvatar',
+    async ({id},thunkAPI)=>{
+        try {
+            const {data} = await usersService.deleteAvatar(id)
+            return data
+        }catch (e) {
+            return thunkAPI.rejectWithValue(e.response.data)
+        }
     }
 )
 
@@ -54,6 +65,9 @@ const userSlice = createSlice({
         },
         [getOwnInfo.fulfilled]:(state,action)=> {
             state.userInfo = action.payload;
+        },
+        [putAvatar.fulfilled]:(state,action)=> {
+            state.avatar = action.payload;
         }
     }
 })
@@ -61,7 +75,7 @@ const userSlice = createSlice({
 const {reducer:userReducer} = userSlice;
 
 const userActions ={
-    getUser,getOwnInfo,updateOwnInfo
+    getUser,getOwnInfo,putAvatar,deleteAvatar
 }
 
 export {userReducer,userActions}

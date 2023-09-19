@@ -15,6 +15,7 @@ import ForgotSendEmail from "./components/ForgotPassoword/ForgotSendEmail";
 import ForgotPasswordMessage from "./components/ForgotPassoword/ForgotPasswordMessage";
 import SetNewPassword from "./components/ForgotPassoword/SetNewPassword";
 import UpdateOwnInfo from "./components/UpdateOwnInfo/UpdateOwnInfo";
+import Avatar from "./components/Avatar/Avatar";
 
 function App() {
     return (
@@ -38,6 +39,7 @@ function App() {
                     <Route path="/forgotPasswordMessage" element={<ForgotPasswordMessage/>}/>
                     <Route path="/forgot" element={<SetNewPassword/>}/>
                     <Route path="/updateOwnInfo" element={<UpdateOwnInfo/>}/>
+                    <Route path="/avatar/:id" element={<Avatar/>}/>
                 </Route>
             </Routes>
         </div>

@@ -14,15 +14,12 @@ export default function UpdateOwnInfo(){
         try {
             const _id = authService.getIdByToken();
             const { name, surname, email } = data;
-
-            // Перевіряємо, чи є значення введеними користувачем
             const updateData = {};
             if (name) updateData.name = name;
             if (surname) updateData.surname = surname;
             if (email) updateData.email = email;
 
             if (Object.keys(updateData).length === 0) {
-                // Якщо користувач не ввів нові дані, то нічого не оновлюємо
                 navigate('/cabinet');
                 return;
             }
