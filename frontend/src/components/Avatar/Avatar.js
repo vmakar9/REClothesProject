@@ -13,9 +13,9 @@ export default function Avatar(){
 
     const handleUploadAvatar= async (avatar)=> {
         const formData  = new FormData();
-        formData.append('file',avatar.target.files[0])
-
-        dispatch(userActions.putAvatar({formData,id}))
+       formData.append('avatar',avatar.target.files[0])
+        await dispatch(userActions.putAvatar({formData,id}))
+        navigate('/cabinet')
     }
 
     const handleDeleteAvatar= async ()=> {
