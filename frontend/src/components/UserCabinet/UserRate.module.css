@@ -12,3 +12,8 @@
     margin-bottom: 0;
     color: maroon;
 }
+
+.title{
+    display: flex;
+    justify-content: center;
+}

@@ -3,6 +3,7 @@ import {authService} from "../../services/auth.service";
 import {useEffect} from "react";
 import {ratingActions} from "../../redux/slices/RatingSlice";
 import UserRate from "./UserRate";
+import css from "./UserRate.module.css"
 
 export default function UserRating(){
     const dispatch = useDispatch()
@@ -17,6 +18,7 @@ export default function UserRating(){
 
 
     return(<div>
+        <h3 className={css.title}>Your rating</h3>
         {ownRating?.map(ownRate=>  (<UserRate key={ownRate._id} ownRate={ownRate}/>))}
     </div>)
 }

@@ -25,19 +25,8 @@ export default function UserCabinet(){
 
     return(<div>
         {userInfo?.map(userInfos =>  <UserInfo key={userInfos._id} userInfos={userInfos}/>)}
-        <div>
-        <button onClick={() =>  navigate("/changePassword")} className={css.buttons}>ChangePassword</button>
-        </div>
-        <div>
-            <button onClick={() =>  navigate("/activateAcc")} className={css.buttons}>Activate</button>
-        </div>
-        <div>
-            <button onClick={() =>  navigate("/create")} className={css.buttons}>Create</button>
-        </div>
-        <div>
-            <button onClick={() =>  navigate("/updateOwnInfo")} className={css.buttons}>Update info</button>
-        </div>
         <ExitCabinet/>
+        <hr/>
         <UserRating/>
     </div>)
 

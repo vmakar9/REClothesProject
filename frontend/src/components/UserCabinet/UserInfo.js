@@ -18,5 +18,19 @@ export default function UserInfo({userInfos}){
         <h3> Status : {userInfos.status}</h3>
         <h3> Role : {userInfos.role}</h3>
         </div>
+        <div className={css.block_buttons}>
+        <div>
+            <button onClick={() =>  navigate("/changePassword")} className={css.buttons}>ChangePassword</button>
+        </div>
+        <div>
+            <button onClick={() =>  navigate("/activateAcc")} className={css.buttons}>Activate</button>
+        </div>
+        <div>
+            <button onClick={() =>  navigate("/create")} className={css.buttons}>Create</button>
+        </div>
+        <div>
+            <button onClick={() =>  navigate("/updateOwnInfo")} className={css.buttons}>Update info</button>
+        </div>
+        </div>
     </div>
 }
