@@ -5,8 +5,8 @@ import UserInfo from "./UserInfo";
 import {authService} from "../../services/auth.service";
 import UserRating from "./UserRating";
 import ExitCabinet from "./ExitCabinet";
-import css from "./UserInfo.module.css"
 import {useNavigate} from "react-router-dom";
+
 
 
 export default function UserCabinet(){

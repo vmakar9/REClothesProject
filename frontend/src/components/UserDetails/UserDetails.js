@@ -1,4 +1,4 @@
-import {useLocation} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import {photoURL} from "../../urls/urls";
 import css from "./UserDetails.module.css"
 import {useDispatch, useSelector} from "react-redux";
@@ -10,6 +10,8 @@ import UserRating from "./UserRating";
 
 
 export default function UserDetails(){
+
+    const navigate = useNavigate()
 
     const {state} = useLocation();
 
@@ -33,7 +35,6 @@ export default function UserDetails(){
 
     const usersRatings = ratings?.filter(userRating =>  _id.includes(userRating.target))
 
-    console.log(usersRatings)
 
     return(<div className={css.usercontainer}>
         <div className={css.user}>
@@ -41,6 +42,7 @@ export default function UserDetails(){
         <h3 className={css.username}>{name}</h3> <h3 className={css.surname}>{surname}</h3>
         </div>
         <div>{usersClothes?.map(userClothe =>  <UsersClothes key={userClothe._id} userCloth={userClothe}/>)}</div>
+        <button onClick={()=> navigate(`FeedBack/${_id}`)}>Write FeedBack</button>
         <div>{usersRatings?.map(userRating => <UserRating key ={userRating._id} userRating={userRating}/>)}</div>
     </div>)
 }

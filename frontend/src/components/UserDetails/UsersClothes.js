@@ -12,7 +12,7 @@ export default function UsersClothes({userCloth}){
                 <p className={css.type}>{userCloth.type}</p>
                 <p className={css.materials}>{`${userCloth.materials}`}</p>
                 <p className={css.avilability}>{userCloth.availability}</p>
-                <img alt={"Clothes photo"} src={`${photoURL/userCloth.photos[0]}`} className={css.photos}/>
+                <img alt={"Clothes photo"} src={`${photoURL}/${userCloth.photos[0]}`} className={css.photos}/>
                 <p className={css.description}>{userCloth.description}</p>
                 <h3 className={css.price}>{userCloth.price}</h3>
             </div>

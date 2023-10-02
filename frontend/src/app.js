@@ -16,6 +16,8 @@ import ForgotPasswordMessage from "./components/ForgotPassoword/ForgotPasswordMe
 import SetNewPassword from "./components/ForgotPassoword/SetNewPassword";
 import UpdateOwnInfo from "./components/UpdateOwnInfo/UpdateOwnInfo";
 import Avatar from "./components/Avatar/Avatar";
+import Rating from "./components/Rating/Rating";
+import OwnUsersClothes from "./components/UsersClothes/OwnUsersClothes";
 
 function App() {
     return (
@@ -40,6 +42,8 @@ function App() {
                     <Route path="/forgot" element={<SetNewPassword/>}/>
                     <Route path="/updateOwnInfo" element={<UpdateOwnInfo/>}/>
                     <Route path="/avatar/:id" element={<Avatar/>}/>
+                    <Route path="/clothes/:id/userDetails/FeedBack/:userId" element={<Rating/>}/>
+                    <Route path="/yourClothes" element={<OwnUsersClothes/>}/>
                 </Route>
             </Routes>
         </div>

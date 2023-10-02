@@ -5,7 +5,8 @@ import {apiService} from "./api.service";
 
 const ratingService={
     getRating:()=> axiosService.get(`${urls.rating}/getAll`),
-    getOwnRating:(_id)=> apiService.get(`${urls.rating}/getOwnRating`)
+    getOwnRating:(_id)=> apiService.get(`${urls.rating}/getOwnRating`),
+    postRating:(rate,userId)=> apiService.post(`${urls.rating}/${userId}`,{rate,userId})
 }
 
 export {ratingService}

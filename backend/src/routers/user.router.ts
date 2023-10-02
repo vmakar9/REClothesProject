@@ -41,7 +41,7 @@ router.patch("/updateOwnInfo",
     accessMiddleware.getUserStatus,
     userController.update)
 
-router.post("/:userId/rating",
+router.post("/rating/:userId",
     authMiddleware.checkAccessToken,
     userMiddleware.getByIdOrThrow,
     accessMiddleware.getUserStatus,

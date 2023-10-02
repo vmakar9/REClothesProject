@@ -1,0 +1,41 @@
+.clothes_block {
+    justify-content: center;
+    padding: 20px;
+}
+
+.clothes {
+    background-color:white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.title {
+    font-size: 24px;
+    margin-top: 0;
+}
+
+.size, .people, .season, .type, .materials, .availability, .description {
+    color: black;
+    font-size: 14px;
+}
+
+.photos {
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px 0 20px;
+}
+
+.photos img {
+    width: 200px;
+    height: auto;
+    margin: 0 10px;
+}
+
+.price {
+    font-size: 20px;
+    margin-bottom: 0;
+    color: maroon;
+}

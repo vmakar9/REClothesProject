@@ -30,6 +30,18 @@ const getOwnRatings = createAsyncThunk(
     }
 )
 
+const postRating = createAsyncThunk(
+    'ratingSlice/postRating',
+    async ({data,userId},thunkAPI)=>{
+        try {
+            const {res} = ratingService.postRating(data,userId)
+            return res
+        }catch (e) {
+            return thunkAPI.rejectWithValue(e.response.data)
+        }
+    }
+)
+
 const ratingSlice = createSlice({
     name:'ratingSlice',
     initialState,
@@ -46,7 +58,7 @@ const ratingSlice = createSlice({
 const {reducer:ratingReducer} = ratingSlice;
 
 const ratingActions={
-    getRatings,getOwnRatings
+    getRatings,getOwnRatings,postRating
 }
 
 export {ratingActions,ratingReducer}

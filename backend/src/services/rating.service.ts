@@ -6,7 +6,7 @@ import {ApiError} from "../error/api.error";
 class RatingService {
     public async create(data:IRating,creatorId: string, targetId: string){
         try {
-            await Rating.create({...data,
+           return await Rating.create({...data,
                 user:new Types.ObjectId(creatorId),
                 target:targetId})
         }catch (e) {

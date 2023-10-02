@@ -31,6 +31,9 @@ export default function UserInfo({userInfos}){
         <div>
             <button onClick={() =>  navigate("/updateOwnInfo")} className={css.buttons}>Update info</button>
         </div>
+            <div>
+                <button onClick={() =>  navigate(`/yourClothes`,{state:{...userInfos}})} className={css.buttons}>Your clothes</button>
+            </div>
         </div>
     </div>
 }
