@@ -1,4 +1,4 @@
-.clothes_block {
+.block {
     justify-content: center;
     padding: 20px;
 }
@@ -10,8 +10,6 @@
     padding: 20px;
     margin-top: 20px;
     text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease
 }
 
 .title {
@@ -19,21 +17,40 @@
     margin-top: 0;
 }
 
-.size {
+.size, .people, .season, .type, .materials, .availability, .description {
     color: black;
     font-size: 14px;
 }
 
-.image{
+.photos {
     justify-content: center;
     align-items: center;
     margin: 0 10px 0 20px;
+}
+
+.photos img {
     width: 200px;
     height: auto;
-
+    margin: 0 10px;
 }
+
 .price {
     font-size: 20px;
     margin-bottom: 0;
     color: maroon;
+}
+
+.buttons button{
+    background-color: maroon;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.buttons button:hover{
+    background-color: black;
 }

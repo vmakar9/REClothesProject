@@ -5,7 +5,7 @@ import {ApiError} from "../error/api.error";
 class ClothesMiddleware{
     public async getIdOrThrow(req:Request,res:Response,next:NextFunction):Promise<void>{
         try {
-            const { clothesId } = req.params;
+            const {clothesId} = req.params;
 
             const clothes = await Clothes.findById(clothesId);
 

@@ -44,6 +44,28 @@ const create = createAsyncThunk(
     }
 )
 
+const update = createAsyncThunk(
+    'clothesSlice/update',
+    async ({id,clothes},thunkAPI)=>{
+        try {
+            await clothesService.update(id,clothes)
+        }catch (e) {
+            return thunkAPI.rejectWithValue(e.response.data)
+        }
+    }
+)
+
+const deleteById = createAsyncThunk(
+    'clothesSlice/delete',
+    async ({clothesId},thunkAPI)=>{
+      try {
+          await clothesService.delete(clothesId)
+      }catch (e) {
+          return thunkAPI.rejectWithValue(e.response.data)
+      }
+    }
+)
+
 const clothesSlice= createSlice({
     name:"clothesSlice",
     initialState,
@@ -62,7 +84,7 @@ const clothesSlice= createSlice({
 const {reducer:clothesReducer}=clothesSlice;
 
 const clothesActions={
-    getAll,getWithThePagination,create
+    getAll,getWithThePagination,create,update,deleteById
 }
 
 export {clothesActions,clothesReducer}

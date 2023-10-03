@@ -1,22 +1,17 @@
 import css from "./OwnClothes.module.css"
 import {photoURL} from "../../urls/urls";
+import {useNavigate} from "react-router-dom";
 
 export default function OwnClothes({clothes}){
-        const allPhotos = clothes.photos.map((photo,index)=>  (
-            <img key ={index} src={`${photoURL}/${photo}`} alt={`Photo ${index +1}`}/>
-        ));
+
+     const navigate = useNavigate()
+
     return(<div className={css.clothes_block}>
-            <div className={css.clothes}>
+            <div onClick={()=>navigate(`${clothes._id}`,{state:{...clothes}})} className={css.clothes}>
             <h3 className={css.title}>{clothes.title}</h3>
+            <img className={css.image} src={`${photoURL}/${clothes.photos[0]}`} alt={"Clothes photo"}/>
             <p className={css.size}>{`${clothes.size}`}</p>
-            <p className={css.people}>{clothes.people}</p>
-            <p className={css.season}>{`${clothes.season}`}</p>
-            <p className={css.type}>{clothes.type}</p>
-            <p className={css.materials}>{`${clothes.materials}`}</p>
-            <p className={css.availability}>{clothes.availability}</p>
-                    <div className={css.photos}>{allPhotos}</div>
-            <p className={css.description}>{clothes.description}</p>
-            <h3 className={css.price}>{clothes.price}</h3>
+            <h3 className={css.price}> {clothes.price}</h3>
             </div>
     </div>)
 }

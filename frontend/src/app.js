@@ -18,6 +18,7 @@ import UpdateOwnInfo from "./components/UpdateOwnInfo/UpdateOwnInfo";
 import Avatar from "./components/Avatar/Avatar";
 import Rating from "./components/Rating/Rating";
 import OwnUsersClothes from "./components/UsersClothes/OwnUsersClothes";
+import YourClothes from "./components/UsersClothes/YourClothes";
 
 function App() {
     return (
@@ -44,6 +45,7 @@ function App() {
                     <Route path="/avatar/:id" element={<Avatar/>}/>
                     <Route path="/clothes/:id/userDetails/FeedBack/:userId" element={<Rating/>}/>
                     <Route path="/yourClothes" element={<OwnUsersClothes/>}/>
+                    <Route path="/yourClothes/:clothesId" element={<YourClothes/>}/>
                 </Route>
             </Routes>
         </div>

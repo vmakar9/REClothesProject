@@ -5,7 +5,9 @@ import {apiService} from "./api.service";
 const clothesService= {
     getWithThePagination:(page=1) => axiosService.get(urls.clothes,{params:{page}}),
     getAll:()=> axiosService.get(`${urls.clothes}/getAll`),
-    create:(data)=> apiService.post(urls.clothes,data)
+    create:(data)=> apiService.post(urls.clothes,data),
+    update:(id,data)=>apiService.put(`${urls.clothes}/${id}`,data),
+    delete:(id)=> apiService.delete(`${urls.clothes}/${id}`)
 }
 
 
