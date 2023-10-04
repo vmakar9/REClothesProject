@@ -46,9 +46,9 @@ const create = createAsyncThunk(
 
 const update = createAsyncThunk(
     'clothesSlice/update',
-    async ({id,clothes},thunkAPI)=>{
+    async ({clothesId,clothes},thunkAPI)=>{
         try {
-            await clothesService.update(id,clothes)
+            await clothesService.update(clothesId,clothes)
         }catch (e) {
             return thunkAPI.rejectWithValue(e.response.data)
         }

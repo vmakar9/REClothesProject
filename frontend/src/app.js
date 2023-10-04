@@ -19,6 +19,7 @@ import Avatar from "./components/Avatar/Avatar";
 import Rating from "./components/Rating/Rating";
 import OwnUsersClothes from "./components/UsersClothes/OwnUsersClothes";
 import YourClothes from "./components/UsersClothes/YourClothes";
+import UpdateForm from "./components/UsersClothes/UpdateForm";
 
 function App() {
     return (
@@ -46,6 +47,7 @@ function App() {
                     <Route path="/clothes/:id/userDetails/FeedBack/:userId" element={<Rating/>}/>
                     <Route path="/yourClothes" element={<OwnUsersClothes/>}/>
                     <Route path="/yourClothes/:clothesId" element={<YourClothes/>}/>
+                    <Route path="/updateForm/:clothesId" element={<UpdateForm/>}/>
                 </Route>
             </Routes>
         </div>

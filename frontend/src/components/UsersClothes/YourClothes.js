@@ -27,6 +27,7 @@ export default function YourClothes(){
             <p className={css.size}>{`${state.size}`}</p>
             <p className={css.people}>{state.people}</p>
             <p className={css.season}>{`${state.season}`}</p>
+            <p className={css.color}>{state.color}</p>
             <p className={css.type}>{state.type}</p>
             <p className={css.materials}>{`${state.materials}`}</p>
             <p className={css.availability}>{state.availability}</p>
@@ -35,6 +36,7 @@ export default function YourClothes(){
             <h3 className={css.price}>{state.price}</h3>
             <div className={css.buttons}>
                 <button  onClick={deleteClothes}>Delete</button>
+                <button  onClick={()=>navigate(`/updateForm/${state._id}`)}>Update</button>
             </div>
 
         </div>
