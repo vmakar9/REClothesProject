@@ -30,6 +30,7 @@ export default function YourClothes(){
             <p className={css.color}>{state.color}</p>
             <p className={css.type}>{state.type}</p>
             <p className={css.materials}>{`${state.materials}`}</p>
+            <p className={css.country}>{state.country}</p>
             <p className={css.availability}>{state.availability}</p>
             <div className={css.photos}>{allPhotos}</div>
             <p className={css.description}>{state.description}</p>

@@ -17,7 +17,7 @@
     margin-top: 0;
 }
 
-.size, .color,.people, .season, .type, .materials, .availability, .description {
+.size, .color, .country, .people, .season, .type, .materials, .availability, .description {
     color: black;
     font-size: 14px;
 }

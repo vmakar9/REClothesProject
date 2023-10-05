@@ -7,7 +7,8 @@ const clothesService= {
     getAll:()=> axiosService.get(`${urls.clothes}/getAll`),
     create:(data)=> apiService.post(urls.clothes,data),
     update:(id,data)=>apiService.put(`${urls.clothes}/${id}`,data),
-    delete:(id)=> apiService.delete(`${urls.clothes}/${id}`)
+    delete:(id)=> apiService.delete(`${urls.clothes}/${id}`),
+    getById:(id)=> apiService.get(`${urls.clothes}/${id}`)
 }
 
 

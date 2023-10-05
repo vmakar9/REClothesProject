@@ -25,7 +25,8 @@ export default function UpdateForm(){
     });
 
     const handleUpdate = async (data)=>{
-      await clothesService.update(clothesId,data)
+        await clothesService.update(clothesId, data);
+        navigate('/yourClothes')
     }
 
     return (<div>

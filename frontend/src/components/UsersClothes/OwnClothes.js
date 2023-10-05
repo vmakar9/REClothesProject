@@ -10,6 +10,7 @@ export default function OwnClothes({clothes}){
             <div onClick={()=>navigate(`${clothes._id}`,{state:{...clothes}})} className={css.clothes}>
             <h3 className={css.title}>{clothes.title}</h3>
             <img className={css.image} src={`${photoURL}/${clothes.photos[0]}`} alt={"Clothes photo"}/>
+                <p className={css.materials}>{clothes.materials}</p>
             <p className={css.size}>{`${clothes.size}`}</p>
             <h3 className={css.price}> {clothes.price}</h3>
             </div>
