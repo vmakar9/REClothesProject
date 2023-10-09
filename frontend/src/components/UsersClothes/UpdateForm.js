@@ -2,7 +2,7 @@ import {useDispatch} from "react-redux";
 import {useNavigate, useParams} from "react-router-dom";
 import {useFieldArray, useForm} from "react-hook-form";
 import {clothesActions} from "../../redux/slices/ClothesSlice";
-import css from "../ClothesCreate/СlothesCreate.module.css";
+import css from "./UpdateForm.module.css";
 import {clothesService} from "../../services/clothes.service";
 
 export default function UpdateForm(){
@@ -30,8 +30,8 @@ export default function UpdateForm(){
     }
 
     return (<div>
-            <form onSubmit={handleSubmit(handleUpdate)}>
-                <div>
+            <form onSubmit={handleSubmit(handleUpdate)} className={css.form_container}>
+                <div className={css.form_group}>
                     <div>
                         <label htmlFor="title">Title</label>
                         <input type="text" placeholder="title" name="title" {...register("title")} />
@@ -110,7 +110,7 @@ export default function UpdateForm(){
                         <input type="text" placeholder="type" name="type" {...register("type")} />
                     </div>
 
-                    <button>Update</button>
+                    <button type={"submit"}>Update</button>
                 </div>
             </form>
 
