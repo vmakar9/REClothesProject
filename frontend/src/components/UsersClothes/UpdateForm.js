@@ -25,7 +25,7 @@ export default function UpdateForm(){
     });
 
     const handleUpdate = async (data)=>{
-        await clothesService.update(clothesId, data);
+        await dispatch(clothesActions.update({clothesId,clothes:data}));
         navigate('/yourClothes')
     }
 
@@ -60,7 +60,7 @@ export default function UpdateForm(){
                         {sizeFields.map((field, index) => (
                             <div key={field.id}>
                                 <label htmlFor={`size.${index}.name`}>Size</label>
-                                <input
+                                <input type="text"
                                     {...register(`size.${index}.name`)}
                                     defaultValue={field.name}
                                     placeholder="Size"
@@ -87,7 +87,7 @@ export default function UpdateForm(){
                         {seasonFields.map((field, index) => (
                             <div key={field.id}>
                                 <label htmlFor={`season.${index}.name`}>Season</label>
-                                <input
+                                <input type="text"
                                     {...register(`season.${index}.name`)}
                                     defaultValue={field.name}
                                     placeholder="Season"

@@ -6,6 +6,7 @@ import {UploadedFile} from "express-fileupload";
 import {s3Service} from "./s3.service";
 import {IPaginationResponse, IQuery} from "../types/pagination.types";
 
+
 class ClothesService{
     public async create(data:IClothes,creatorId:string){
         try {

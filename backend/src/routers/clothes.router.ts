@@ -25,7 +25,7 @@ router.get("/:clothesId",
     clothesMiddleware.getIdOrThrow,
     clothesController.getClothesById)
 
-router.put("/:clothesId",
+router.patch("/:clothesId",
     authMiddleware.checkAccessToken,
     clothesMiddleware.getIdOrThrow,
     accessMiddleware.getUserStatus,
